@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { JokeListComponent } from './app.component';
 import { JokeComponent } from './joke/joke.component';
+import { JokeFormComponent } from './joke-form/joke-form.component';
 
 @NgModule({
   declarations: [
     JokeListComponent,
-    JokeComponent
+    JokeComponent,
+    JokeFormComponent
   ],
   imports: [
     BrowserModule

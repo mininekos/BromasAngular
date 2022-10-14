@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Broma } from '../broma';
 
 @Component({
@@ -9,6 +9,7 @@ import { Broma } from '../broma';
 export class JokeComponent {
 
   @Input() joke!: Broma;
+  //@Output() eliminarBroma: new EventEmitter();
   constructor() { }
 
   
