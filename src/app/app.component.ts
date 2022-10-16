@@ -17,5 +17,8 @@ export class JokeListComponent {
             
   }
 
+  agregarBroma(broma:Broma){
+    this.bromas.unshift(broma);
+  }
   
 }

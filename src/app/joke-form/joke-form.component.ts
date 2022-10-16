@@ -8,11 +8,12 @@ import { Broma } from '../broma';
 })
 export class JokeFormComponent  {
 
-  //@Output() mandarBroma!: new EventEmitter<Broma>();
+  @Output() mandarBroma = new EventEmitter<Broma>();
   constructor() { }
 
   crearBroma(pregunta: string, respuesta:string){
-    //this.mandarBroma.emit(new Broma(pregunta,respuesta));
+    this.mandarBroma.emit(new Broma(pregunta,respuesta));
   }
+  
 
 }
