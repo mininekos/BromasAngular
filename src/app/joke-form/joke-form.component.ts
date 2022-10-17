@@ -11,8 +11,12 @@ export class JokeFormComponent  {
   @Output() mandarBroma = new EventEmitter<Broma>();
   constructor() { }
 
-  crearBroma(pregunta: string, respuesta:string){
-    this.mandarBroma.emit(new Broma(pregunta,respuesta));
+  crearBroma(pregunta: HTMLInputElement, respuesta:HTMLInputElement){
+    if(pregunta.value!="" && respuesta.value!=""){
+      this.mandarBroma.emit(new Broma(pregunta.value,respuesta.value));
+      pregunta.value="";
+      respuesta.value="";
+    }
   }
   
 

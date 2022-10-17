@@ -20,5 +20,9 @@ export class JokeListComponent {
   agregarBroma(broma:Broma){
     this.bromas.unshift(broma);
   }
+
+  eliminarBromaArray(broma: Broma){
+    this.bromas=this.bromas.filter((x)=>x.getId() !=broma.getId());
+  }
   
 }

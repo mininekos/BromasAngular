@@ -9,9 +9,11 @@ import { Broma } from '../broma';
 export class JokeComponent {
 
   @Input() joke!: Broma;
-  //@Output() eliminarBroma: new EventEmitter();
+  @Output() eliminarBroma= new EventEmitter();
   constructor() { }
 
-  
+  borrarBroma(broma: Broma){
+    this.eliminarBroma.emit(broma);
+  }
 
 }

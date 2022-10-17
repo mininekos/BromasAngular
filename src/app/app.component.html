@@ -1,4 +1,4 @@
 
 <h1>Gestor de bromas</h1>
 <joke-form (mandarBroma)="agregarBroma($event)"></joke-form>
-<joke *ngFor="let j of bromas" [joke]="j"></joke>
+<joke *ngFor="let j of bromas" [joke]="j" (eliminarBroma)="eliminarBromaArray($event)"></joke>
