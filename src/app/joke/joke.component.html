@@ -1,7 +1,7 @@
 
 <div class="card card-block" >
-    <h4>{{joke.pregunta}}</h4>
-    <p [hidden]="joke.oculto">{{joke.respuesta}}</p>
+    <h4>{{joke.getPregunta()}} </h4>
+    <p [hidden]="joke.getOculto()">{{joke.getRespuesta()}}</p>
     <a class="btn btn-warning btnRespuesta" (click)="joke.cambiarHidden(joke)">Respuesta</a>
     <a class="btn btn-danger" (click)="borrarBroma(joke)">Borrar</a>
   </div>

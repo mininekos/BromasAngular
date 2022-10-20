@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Broma } from '../broma';
+import { Broma } from '../Modelo/broma';
 
 @Component({
   selector: 'joke',

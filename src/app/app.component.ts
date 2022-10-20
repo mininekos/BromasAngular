@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Broma } from './broma';
+import { Broma } from './Modelo/broma';
+import { Servicio } from './Modelo/servicio';
 
 @Component({
   selector: 'joke-list',
@@ -8,21 +9,19 @@ import { Broma } from './broma';
 })
 export class JokeListComponent {
 
-  bromas=  [
-    new Broma("What did the cheese say when it looked in the mirror?", "Hellome (Halloumi)"),
-    new Broma("What kind of cheese do you use to disguise a small horse?","Mask-a-pony (Mascarpone)"),
-    new Broma("A kid threw a lump of cheddar at me", "I thought ‘That’s not very mature’"),
-    ];
-    constructor() {
-            
-  }
-
-  agregarBroma(broma:Broma){
-    this.bromas.unshift(broma);
-  }
-
-  eliminarBromaArray(broma: Broma){
-    this.bromas=this.bromas.filter((x)=>x.getId() !=broma.getId());
+  servicio: Servicio;
+  constructor() {
+    this.servicio=new Servicio;
   }
   
+  obtenerArray(){
+    return this.servicio.bromaArray();
+  }
+  agregarBroma(broma: Broma){
+    this.servicio.agregarBroma(broma);
+  }
+
+  eliminarBroma(broma: Broma){
+    this.servicio.eliminarBromadelArray(broma);
+  }
 }
