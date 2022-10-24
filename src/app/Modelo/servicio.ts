@@ -5,9 +5,9 @@ export class Servicio {
     private bromas: Broma[];
     constructor(){
         this.bromas=  [
-            new Broma("What did the cheese say when it looked in the mirror?", "Hellome (Halloumi)"),
-            new Broma("What kind of cheese do you use to disguise a small horse?","Mask-a-pony (Mascarpone)"),
-            new Broma("A kid threw a lump of cheddar at me", "I thought ‘That’s not very mature’"),
+            new Broma("¿Cual es el colmo de un jardinero)", "Que le dejen plantado"),
+            new Broma("¿Que hubiera pasado si la virgen maria tuviera 3 hijos?","Que serian tri-jisus"),
+            new Broma("Que le dice un ojo a otro ojo", "Estamos separados por narices"),
         ];
     }
 
