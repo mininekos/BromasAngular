@@ -6,7 +6,7 @@ export class Broma {
     private respuesta: string;
     private oculto: boolean;
     private id: Number;
-    static cont: number=0;
+    private static cont: number=0;
 
     constructor(pregunta: string,respuesta: string){
         this.pregunta=pregunta;
