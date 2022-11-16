@@ -11,10 +11,7 @@ export class BorrarInsultosPipe implements PipeTransform {
     insultos.forEach(element => {
       if(value.includes(element))
         value=value.replace(element,"$%#@!")
-        console.log(element)
-    });
-    
-    
+    });      
     return value;
   }
 
