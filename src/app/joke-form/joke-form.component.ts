@@ -31,7 +31,7 @@ export class JokeFormComponent  {
 
   crearComponentesFormulario() {
     this.preguntaForm=new FormControl('',[Validators.required,Validators.minLength(5)]);
-    this.respuestaForm=new FormControl('',Validators.required);
+    this.respuestaForm=new FormControl('',[Validators.required,Validators.minLength(5)]);
   }
 
   crearFormuralrio() {
