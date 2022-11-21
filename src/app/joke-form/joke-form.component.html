@@ -1,11 +1,25 @@
 
 <div class="card card-block">
     <h4 class="card-title">Crear Broma</h4>
-    <div class="form-group">
-    <input type="text" class="form-control" placeholder="Pregunta de la broma o titulo" #setup>
-    </div>
-    <div class="form-group">
-        <input type="text" class="form-control" placeholder="Respuesta o broma"#punchline>
-    </div>
-    <button type="button" class="btn btn-primary" (click)="crearBroma(setup, punchline)">Create</button>
+    <form class="form-group"  [formGroup]="formulario">
+        <div class="form-group" [ngClass]="{
+            'has-danger': preguntaForm.invalid && preguntaForm.dirty,
+            'has-success': preguntaForm.valid && preguntaForm.dirty
+        }">
+            <input type="text" class="form-control" 
+            placeholder="Pregunta de la broma o titulo" #setup
+            formControlName="preguntaForm"> 
+            <p *ngIf="formulario.controls['preguntaForm'].errors?.['required']">Broma requerida</p> 
+            <p *ngIf="preguntaForm.hasError('minlength')">Minimo 5 caracteres</p>  
+        </div>
+        <div class="form-group" [ngClass]="{
+            'has-danger': respuestaForm.invalid && respuestaForm.dirty,
+            'has-success': respuestaForm.valid && respuestaForm.dirty
+        }">
+            <input type="text" class="form-control" 
+            placeholder="Respuesta o broma"#punchline
+            formControlName="respuestaForm">
+        </div>
+        <button type="button" class="btn btn-primary" (click)="crearBroma(setup, punchline)">Create</button>
+    </form>
   </div>
