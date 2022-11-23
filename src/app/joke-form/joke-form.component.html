@@ -22,6 +22,7 @@
             <p *ngIf="respuestaForm.errors?.['required']">Respuesta requerida</p> 
             <p *ngIf="respuestaForm.errors?.['minlength']">Minimo 5 caracteres</p>
         </div>
-        <button type="button" class="btn btn-primary" (click)="crearBroma(setup, punchline)">Create</button>
+        <button type="button" class="btn btn-primary" (click)="crearBroma(setup, punchline)"
+        [disabled]="formulario.invalid">Create</button>
     </form>
   </div>

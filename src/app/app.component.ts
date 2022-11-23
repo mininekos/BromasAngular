@@ -11,18 +11,18 @@ import { ServicioPruebaService } from './Modelo/servicio-prueba.service';
 export class JokeListComponent {
 
   
-  constructor(public servicio: ServicioPruebaService) {
+  constructor(private servicio: ServicioPruebaService) {
     
   }
   
   obtenerArray(){
     return this.servicio.bromaArray();
-  }
+  }/*
   agregarBroma(broma: Broma){
     this.servicio.agregarBroma(broma);
   }
 
   eliminarBroma(broma: Broma){
     this.servicio.eliminarBromadelArray(broma);
-  }
+  }*/
 }

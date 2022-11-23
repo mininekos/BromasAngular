@@ -16,15 +16,16 @@ export class JokeFormComponent  {
   
   @Output() mandarBroma = new EventEmitter<Broma>();
 
-  constructor(public servicio: ServicioPruebaService) { }
+  constructor(private servicio: ServicioPruebaService) { }
   
   crearBroma(pregunta: HTMLInputElement, respuesta:HTMLInputElement){
     if(pregunta.value!="" && respuesta.value!=""){
-      this.mandarBroma.emit(new Broma(pregunta.value,respuesta.value));
+      //this.mandarBroma.emit(new Broma(pregunta.value,respuesta.value));
+      this.servicio.agregarBroma(new Broma(pregunta.value,respuesta.value));
       pregunta.value="";
       respuesta.value="";
     }
-    this.formulario.reset();
+    this.formulario.reset
   }
 
   ngOnInit(){

@@ -10,11 +10,14 @@ import { ServicioPruebaService } from '../Modelo/servicio-prueba.service';
 export class JokeComponent {
 
   @Input() joke!: Broma;
-  @Output() eliminarBroma= new EventEmitter();
+  //@Output() eliminarBroma= new EventEmitter();
   constructor(public servicio: ServicioPruebaService) { }
-
+  /*
   borrarBroma(broma: Broma){
     this.eliminarBroma.emit(broma);
-  }
+  }*/
 
+  borrarBroma(broma: Broma){
+    this.servicio.eliminarBromadelArray(broma);
+  }
 }
