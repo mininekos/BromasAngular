@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Broma } from '../Modelo/broma';
+import { ServicioPruebaService } from '../Modelo/servicio-prueba.service';
 
 @Component({
   selector: 'joke-form',
@@ -14,7 +15,8 @@ export class JokeFormComponent  {
   respuestaForm!: FormControl;
   
   @Output() mandarBroma = new EventEmitter<Broma>();
-  constructor() { }
+
+  constructor(public servicio: ServicioPruebaService) { }
   
   crearBroma(pregunta: HTMLInputElement, respuesta:HTMLInputElement){
     if(pregunta.value!="" && respuesta.value!=""){
@@ -22,6 +24,7 @@ export class JokeFormComponent  {
       pregunta.value="";
       respuesta.value="";
     }
+    this.formulario.reset();
   }
 
   ngOnInit(){

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Broma } from './Modelo/broma';
 import { Servicio } from './Modelo/servicio';
+import { ServicioPruebaService } from './Modelo/servicio-prueba.service';
 
 @Component({
   selector: 'joke-list',
@@ -9,9 +10,9 @@ import { Servicio } from './Modelo/servicio';
 })
 export class JokeListComponent {
 
-  servicio: Servicio;
-  constructor() {
-    this.servicio=new Servicio;
+  
+  constructor(public servicio: ServicioPruebaService) {
+    
   }
   
   obtenerArray(){

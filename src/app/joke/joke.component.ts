@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Broma } from '../Modelo/broma';
+import { ServicioPruebaService } from '../Modelo/servicio-prueba.service';
 
 @Component({
   selector: 'joke',
@@ -10,7 +11,7 @@ export class JokeComponent {
 
   @Input() joke!: Broma;
   @Output() eliminarBroma= new EventEmitter();
-  constructor() { }
+  constructor(public servicio: ServicioPruebaService) { }
 
   borrarBroma(broma: Broma){
     this.eliminarBroma.emit(broma);
