@@ -10,14 +10,14 @@ import { ServicioPruebaService } from './Modelo/servicio-prueba.service';
 })
 export class JokeListComponent {
 
+  bromas!: Broma[];
   
   constructor(private servicio: ServicioPruebaService) {
-    
+    this.servicio.bromaArray$().subscribe(b=>this.bromas=b);
   }
   
-  obtenerArray(){
-    return this.servicio.bromaArray();
-  }/*
+  
+  /*
   agregarBroma(broma: Broma){
     this.servicio.agregarBroma(broma);
   }

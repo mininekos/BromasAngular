@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { Broma } from "./broma";
 
 @Injectable({
@@ -8,8 +8,7 @@ import { Broma } from "./broma";
 export class ServicioPruebaService {
   
     private bromas: Broma[];
-    private _bromas = new BehaviorSubject<Broma[]>([]);
-    readonly  bromas$=this._bromas.asObservable();
+    readonly  bromas$: BehaviorSubject<Broma[]>;
 
     constructor(){
         this.bromas=  [
@@ -17,19 +16,24 @@ export class ServicioPruebaService {
             new Broma("¿Qué hubiera pasado si la virgen maria tuviera 3 hijos?","Que serian tri-jisus"),
             new Broma("¿Qué le dice un ojo a otro ojo?", "Estamos separados por narices"),
         ];
+        this.bromas$=new BehaviorSubject<Broma[]>(this.bromas);
     }
 
     bromaArray(): Broma[]{
-        return this.bromas;
+        return [...this.bromas];
+    }
+
+    bromaArray$(): Observable<Broma[]>{
+        return this.bromas$.asObservable();
     }
 
     agregarBroma(broma:Broma){
         this.bromas.unshift(broma);
-        this._bromas.next(Object.assign([], this.bromas))
+        this.bromas$.next([...this.bromas]);
     }
 
     eliminarBromadelArray(broma: Broma){
         this.bromas=this.bromas.filter((x)=>x.getId() !=broma.getId());
-        this._bromas.next(Object.assign([], this.bromas));
+        this.bromas$.next([...this.bromas]);
     }
 }
