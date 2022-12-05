@@ -25,7 +25,7 @@ export class JokeFormComponent  {
       pregunta.value="";
       respuesta.value="";
     }
-    this.formulario.reset
+    this.formulario.reset();
   }
 
   ngOnInit(){
